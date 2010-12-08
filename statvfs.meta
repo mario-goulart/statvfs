@@ -1,0 +1,7 @@
+;; -*- scheme -*-
+((egg "statvfs.egg")
+ (license "MIT")
+ (category os)
+ (author "Ozzi Lee")
+ (needs foreigners)
+ (synopsis "Wrapper for the statvfs C function."))

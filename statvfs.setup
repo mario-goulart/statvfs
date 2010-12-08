@@ -1,0 +1,9 @@
+;; -*- scheme -*-
+
+(compile -s -O3 -d1 -j statvfs statvfs.scm)
+(compile -s -O3 -d1 statvfs.import.scm)
+
+(install-extension
+ 'statvfs
+ '("statvfs.so" "statvfs.import.so")
+ '((version "1.1.0")))
