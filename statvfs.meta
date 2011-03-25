@@ -4,4 +4,5 @@
  (category os)
  (author "Ozzi Lee")
  (needs foreigners)
- (synopsis "Wrapper for the statvfs C function."))
+ (synopsis "Wrapper for the statvfs C function.")
+ (files "statvfs.setup" "statvfs.scm" "statvfs.meta" "statvfs.release-info"))
