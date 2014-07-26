@@ -1,6 +1,7 @@
-;; statvfs egg for Chicken Scheme
+;; statvfs egg for CHICKEN Scheme
 
-;; Copyright (c) 2008 Ozzi Lee
+;; Copyright (c) 2010-2014 Mario Domenech Goulart
+;; Copyright (c) 2008-2010 Ozzi Lee
 
 ;; Permission is hereby granted, free of charge, to any person
 ;; obtaining a copy of this software and associated documentation
