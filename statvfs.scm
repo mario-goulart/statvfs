@@ -24,7 +24,25 @@
 ;; FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 ;; OTHER DEALINGS IN THE SOFTWARE.
 
-(module statvfs (statvfs)
+(module statvfs
+
+ (statvfs
+
+  ;; filesystem record
+  make-filesystem
+  filesystem?
+  filesystem-block-size
+  filesystem-fundamental-block-size
+  filesystem-blocks
+  filesystem-free-blocks
+  filesystem-free-blocks-for-non-root
+  filesystem-total-file-inodes
+  filesystem-free-file-inodes
+  filesystem-free-file-inodes-for-non-root
+  filesystem-id
+  filesystem-bit-mask
+  filesystem-max-file-name-length
+  )
 
 (import scheme chicken foreign)
 (use srfi-1 foreigners)
@@ -113,5 +131,23 @@
               (f_namemax ptr))))
       (free-statvfs ptr)
       v)))
+
+(define-record filesystem
+  block-size
+  fundamental-block-size
+  blocks
+  free-blocks
+  free-blocks-for-non-root
+  total-file-inodes
+  free-file-inodes
+  free-file-inodes-for-non-root
+  id
+  bit-mask
+  max-file-name-length)
+
+(define %make-filesystem make-filesystem)
+
+(define (make-filesystem path)
+  (apply %make-filesystem (vector->list (statvfs path))))
 
 ) ;; end module
